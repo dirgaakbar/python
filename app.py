@@ -1,12 +1,13 @@
-from flask import Flask
-import os
+import streamlit as st
 
-app = Flask(__name__)
+st.set_page_config(page_title="Website Python Saya", page_icon="🚀")
 
-@app.route('/')
-def home():
-    return " Website Python Berhasil Jalan di Render! "
+st.title("Selamat Datang di Website Python! 🐍")
+st.write("Website ini dihosting gratis menggunakan Streamlit Cloud.")
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+# Contoh interaksi sederhana
+nama = st.text_input("Siapa nama kamu?")
+if nama:
+    st.success(f"Halo {nama}! Senang bertemu denganmu di dunia maya.")
+
+st.sidebar.info("Dibuat dengan ❤️ menggunakan Python.")
